@@ -27,7 +27,10 @@ Qemu and snabb will get downloaded and compiled during the creation of the vmx d
 ```
 $ docker pull marcelwiget/snabbvm
 $ docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+mwiget@st:~/snabbvm$ docker images
+REPOSITORY            TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+marcelwiget/snabbvm   v2015.11            69805655c264        8 minutes ago       374.5 MB
+marcelwiget/snabbvm   latest              8521be79475c        About an hour ago   374.5 MB
 ```
 
 ### Running the VM via the snabbvm Container
