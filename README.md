@@ -91,4 +91,8 @@ automatically launched at Port 5901 of the running containers IP address. Remote
 access can be achieved e.g. via ssh to the docker host and use port forwarding to the
 containers IP address.
 
+### Docker hub
+
+Container images are pushed to Docker Hub an available publically at 
+https://hub.docker.com/r/marcelwiget/snabbvm/
 
