@@ -60,6 +60,7 @@ docker run --name vm1 --rm --privileged -i -t -v $PWD:/u \
   https://cloud-images.ubuntu.com/wily/current/wily-server-cloudimg-amd64-disk1.img
   0000:05:00.0
 ```
+![title](https://github.com/mwiget/snabbvm/blob/master/snabbvm-running-ubuntu-wily.png)
 
 --name <name> 
 The name must be unique across containers on the same server (e.g. vm1)
