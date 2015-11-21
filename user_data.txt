@@ -1,0 +1,7 @@
+#cloud-config
+user: ubuntu
+password: ubuntu
+chpasswd: {expire: False}
+
+runcmd:
+ - ifconfig eth1 1.1.1.1/24
