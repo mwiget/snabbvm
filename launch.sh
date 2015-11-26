@@ -254,7 +254,6 @@ if [ -f "/u/$USERDATA" ]; then
   cat /u/$USERDATA > config_drive/openstack/latest/user_data
 fi
 mkisofs -R -V config-2 -o disk.config config_drive
-cat config_drive/openstack/latest/user_data
 
 # we borrow the last $numactl in case of 10G ports. If there wasn't one
 # then this will be simply empty
