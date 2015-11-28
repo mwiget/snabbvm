@@ -257,12 +257,13 @@ mkisofs -R -V config-2 -o disk.config config_drive
 
 # we borrow the last $numactl in case of 10G ports. If there wasn't one
 # then this will be simply empty
+macaddr=`printf '00:49:BA:%02X:%02X:%02X\n' $[RANDOM%256] $[RANDOM%256] $[RANDOM%256]`
 RUNVM="$numactl $qemu -M pc -smp $CPU --enable-kvm -cpu host -m $MEM \
   -numa node,memdev=mem \
   -object memory-backend-file,id=mem,size=${MEM}M,mem-path=/hugetlbfs,share=on \
   -netdev tap,id=tf0,ifname=em0,script=no,downscript=no \
-  -device virtio-net-pci,netdev=tf0 $CD $HD -drive file=disk.config,if=virtio \
-  $NETDEVS -curses -vnc :1"
+  -device virtio-net-pci,netdev=tf0,mac=$macaddr $CD $HD \
+  -drive file=disk.config,if=virtio $NETDEVS -curses -vnc :1"
 
 echo "$RUNVM" > runvm.sh
 chmod a+rx runvm.sh
